@@ -1,0 +1,20 @@
+BorderPane root = new BorderPane();
+        Scene scene = new Scene(root, 300, 400);
+        stage.setScene(scene);
+        stage.show();
+
+        Button button = new Button();
+        root.setCenter(button);
+        button.setOnAction(e-> {
+            Dialog dialog = new Dialog() ;
+            dialog.setTitle("My Dialog");
+            dialog.setHeaderText("Search Friend?");
+            dialog.setContentText("Please select an option");
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.NO);
+            Optional<ButtonType> result = dialog.showAndWait();
+
+            if(result.get() == ButtonType.OK ){
+
+            }
+        });
